@@ -7,6 +7,10 @@
 
 	<property>
 		<name>fs.default.name</name>
-		<value>hdfs://localhost:9001</value>
+		<value>hdfs://127.0.0.1:9001</value>
+	</property>
+	<property>
+		<name>hadoop.tmp.dir</name>
+		<value>/data/hadoop-tmp/hadoop-${user.name}</value>
 	</property>
 </configuration>

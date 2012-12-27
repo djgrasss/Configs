@@ -6,16 +6,16 @@
 # remote nodes.
 
 # The java implementation to use.  Required.
-export JAVA_HOME=/Library/Java/Home
+export JAVA_HOME=/usr/lib/jdk1.6.0_38
 
 # Extra Java CLASSPATH elements.  Optional.
-# export HADOOP_CLASSPATH=/data/zero/hadoop-1.1.1
+# export HADOOP_CLASSPATH=
 
 # The maximum amount of heap to use, in MB. Default is 1000.
 export HADOOP_HEAPSIZE=2000
 
 # Extra Java runtime options.  Empty by default.
-export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"
+# export HADOOP_OPTS=-server
 
 # Command specific options appended to HADOOP_OPTS when specified
 export HADOOP_NAMENODE_OPTS="-Dcom.sun.management.jmxremote $HADOOP_NAMENODE_OPTS"
