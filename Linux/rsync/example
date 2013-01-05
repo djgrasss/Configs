@@ -1,0 +1,3 @@
+rsync -rv $path username@192.168.132.132::$node
+
+put $path files or directory into $node's path
