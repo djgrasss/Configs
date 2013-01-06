@@ -1,0 +1,62 @@
+（2）启动eclipse，help -> Software Updates-> Find and Install... -> Search for new features to install,单击"New Remote Site..." 在URL栏输入 http://www.technoetic.com/eclipse/update然后下一步，就可以看到“jode decompiler plugin *.*”，选上安装就可以了。安装好后可以看到Window -> Preferences...-> Java -> Jode Decompiler选项卡，okay，安装成功了。
+ 
+配置：Window-> Preferences... -> General -> Editors -> File Associations找到"*.class"在"Associated editors"里面可以看到"Jode class file viewer"选中它再单击Default按钮.
+ 
+JadClipse Eclipse Plugin for Eclipse version 3.1 / 3.2/3.3
+一、下载：
+下载插件：
+下载jadclipse_3.1.0.jar版本，该版本支持eclipse3.1M6～3.2M2
+下载jadclipse_3.2.0.jar版本，该版本支持eclipse3.2M3和eclipse3.2M4.
+下载jadclipse_3.2.4.jar版本，该版本支持eclipse3.2M5～3.3M5
+
+下载jadclipse_3.3.0.jar版本，该版本支持eclipse3.3M6以上版本
+
+下载Jad反编译工具：
+http://www.kpdus.com/jad.html#download，在该页中找到适合自己操作系统平台的jad下载。下载后解压，然后将解压后的jad.exe文件复制到%JAVA_HOME%\bin目录下面（可以将jad.exe放到任意位置，只要记住其存放路径就好，下面要用到）。
+
+二、安装：
+
+Eclipse中的插件安装可以参考：Eclipse使用技巧(三)Eclipse中插件的安装
+    方法1、直接将jadclipse_x.x.x.jar（x.x.x.代表版本号）复制到%ECLIPSE_HOME%\plugins目录下。
+
+方法2、使用link方式安装，建立D：\Myplugins\jadclipse3.2.4\eclipse\plugins的目录结构，将jadclipse_3.2.4.jar放到plugins目录下面（注：其中D：\Myplugins为你自己定义的一个专门放置插件的目录）。再在%ECLIPSE_HOME%\links目录下面建立一个jadclipse3.2.4.link文件（该文件名随便取）。文件里面内容为：path=D：/Myplugins/jadclipse3.2.4.
+
+三、使用：
+启动eclipse，点击反编译的类文件，此时会激活jadclipse插件，在eclipse菜单中会多出一个jadclipse菜单，如下图所示：
+
+一般地它会自动反编译相应的class文件，如果没有自动反编译，请点击
+jadclipse->Decompile
+如下图所示：
+
+
+常见问题及解决：
+
+（一）启动eclipse，打开Window->Preferences->Java->JadClipse，如果没有找到JadClipse，即JadClipse插件没有激活。
+
+（1）检查插件安装的版本是否与你安装的eclipse版本对应
+（2）使用 –clean参数来启动eclipse
+  （二）在使用JadClipse插件反编译class文件时出现如下类似错误：
+/*jadclipse*/
+ 
+/*
+               DECOMPILATION REPORT
+ 
+               Decompiled from: D:\Program Files\Java\jdk1.5.0_12\jre\lib\rt.jar
+               Total time: 16 ms
+               Jad reported messages/errors:
+               Exit status: 0
+               Caught exceptions:
+java.io.IOException: CreateProcess: (...)
+ */
+请确保你的Jad路径在eclipse中正确制定。
+    启动eclipse，打开：Window->Preferences->Java->JadClipse. 
+1、Path to decompiler，这里设置反编译工具jad的全路径名，比如：%JAVA_HOME%\bin\jad.exe. 
+2、Directory for temporary files，这里设置临时文件路径。
+
+至于Window->Preferences->Java->JadClipse目录下的Debug，Directives，Formatting，Misc目录中的参数设置，就不再罗嗦了。
+
+（三）安装完成后，eclipse没有自动将JadClipse Class File Viewer设置成class文件的缺省打开方式。
+
+如果没有默认，可以在Eclipse的Windows—> Perference—>General->Editors->File Associations中修改“*.class”默认关联的编辑器为“JadClipse Class File Viewer”。设置完成后，双击*.class文件，eclipse将自动反编译。
+
+ 

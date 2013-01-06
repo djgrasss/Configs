@@ -1,0 +1,19 @@
+1>下载jad.exe（这是一个class文件的反编译工具，但是是命令行运行编译，使用起来不是很方便；），
+    将其拷贝到%JAVA_HOME%/bin目录下（其他目录也可）。
+ 
+2>下载Eclipse插件net.sf.jadclipse_3.3.jar（注意与Eclipse版本要对应）。
+ 
+3>安装Eclipse插件
+    一、Eclipse3.x.将net.sf.jadclipse_3.3.jar拷贝到eclipse/plugins目录下，重新启动eclipse。
+    二、MyEclipse7.x，每个版本安装的方式不一样，我这里是MyEclipse7.1，与前面版本的安装方式都不一样：
+         在Genuitec/MyEclipse 7.1/dropins/features/然后将net.sf.jadclipse_3.3.jar拷贝到新创建的plugins目录下重启即可。
+ 
+4>配置jadclipse路径
+    启动MyEclipse，进入Window -> Preferences -> Java -> JadClipse，
+    Path to decomiler设置为jad.exe的绝对路径,例如C:/Program Files/Java/jdk1.6.0_13/bin/jad.exe,Directory for temporary files设置为存放临时文件的绝对路径这里默认为C:/Documents and Settins/xxx/.net.sf.jadclipse不用修改 。
+ 
+5>设置class文件的默认编辑器
+    在Windows—> Perferences—>General->Editors->File Associations 中修改“*.class”默认关联的编辑器为“JadClipse Class File Viewer”。如果没有*.class，则点击“add"增加，如果没有jadclipse Class File Viewer，可以点击“Add-Internal Editors”，查找是否有jadclipse，若还是没有，则说明net.sf.jadclipse没有复制到正确的位置。
+ 
+6>解决中文反编译的问题
+在Window > Preferences > Java > JadClipse > Misc，将Convert Unicode strings into ANSI strings选项打勾。
